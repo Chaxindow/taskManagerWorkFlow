@@ -41,7 +41,7 @@ def test_complete_task_marks_done(tm: TaskManager) -> None:
 
 @pytest.mark.parametrize(
     ("filter_done", "expected"),
-    [(None, {"a", "b"}), (True, {"b"}), (False, {"a"})],
+    [(None, {"a", "b"}), (True, "b"), (False, {"a"})],
 )
 
 def test_list_Tasks_filter(tm: TaskManager, filter_done: bool | None, expected: set[str]) -> None:
