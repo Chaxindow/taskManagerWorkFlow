@@ -1,0 +1,27 @@
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "taskmanager-Chaxindow" 
+version = "0.1.0"
+description = "Küçük, tipli bir görev yöneticisi kütüphanesi"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Mete Caliskan" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov", "mypy"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/task_manager"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.mypy]
+disallow_untyped_defs = true
